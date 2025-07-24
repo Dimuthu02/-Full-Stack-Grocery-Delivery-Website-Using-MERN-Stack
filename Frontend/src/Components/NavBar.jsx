@@ -65,58 +65,63 @@ const logout=async()=>{
       </button>
 
       {/* Mobile Menu */}
-      <div
-        className={`${
-          open ? "flex" : "hidden"
-        } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}
-      >
-        <NavLink
-          to="/"
-          className="block hover:text-indigo-600 transition"
-          onClick={() => setOpen(false)}
+      {
+        <div
+          className={`${
+            open ? "flex" : "hidden"
+          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}
         >
-          Home
-        </NavLink>
-        <NavLink
-          to="/products"
-          className="block hover:text-indigo-600 transition"
-          onClick={() => setOpen(false)}
-        >
-          All Product
-        </NavLink>
-        {user && (
+          <NavLink
+            to="/"
+            className="block hover:text-indigo-600 transition"
+            onClick={() => setOpen(false)}
+          >
+            Home
+          </NavLink>
           <NavLink
             to="/products"
             className="block hover:text-indigo-600 transition"
             onClick={() => setOpen(false)}
           >
-            My order
+            All Product
           </NavLink>
-        )}
+          {user && (
+            <NavLink
+              to="/products"
+              className="block hover:text-indigo-600 transition"
+              onClick={() => setOpen(false)}
+            >
+              My order
+            </NavLink>
+          )}
 
-        <NavLink
-          to="/"
-          className="block hover:text-indigo-600 transition"
-          onClick={() => setOpen(false)}
-        >
-          Content
-        </NavLink>
-        {!user ? (
-          <button onClick={()=>
-          {
-            setOpen(false);
-            setshowUserlogin(true)
-          }
-          }
-          className="cursor-pointer px-6 py-2 mt-2 bg-emerald-600 hover:bg-emerald-700 transition text-white rounded-full text-sm">
-            Login
-          </button>
-        ) : (
-          <button onClick={logout} className="cursor-pointer px-6 py-2 mt-2 bg-emerald-600 hover:bg-emerald-700 transition text-white rounded-full text-sm">
-            Logout
-          </button>
-        )}
-      </div>
+          <NavLink
+            to="/"
+            className="block hover:text-indigo-600 transition"
+            onClick={() => setOpen(false)}
+          >
+            Content
+          </NavLink>
+          {!user ? (
+            <button
+              onClick={() => {
+                setOpen(false);
+                setshowUserlogin(true);
+              }}
+              className="cursor-pointer px-6 py-2 mt-2 bg-emerald-600 hover:bg-emerald-700 transition text-white rounded-full text-sm"
+            >
+              Login
+            </button>
+          ) : (
+            <button
+              onClick={logout}
+              className="cursor-pointer px-6 py-2 mt-2 bg-emerald-600 hover:bg-emerald-700 transition text-white rounded-full text-sm"
+            >
+              Logout
+            </button>
+          )}
+        </div>
+      }
     </nav>
   );
 };
