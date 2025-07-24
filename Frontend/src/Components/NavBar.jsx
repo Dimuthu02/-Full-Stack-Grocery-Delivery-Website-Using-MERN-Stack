@@ -65,7 +65,7 @@ const logout=async()=>{
       </button>
 
       {/* Mobile Menu */}
-      {
+      { open &&(
         <div
           className={`${
             open ? "flex" : "hidden"
@@ -121,7 +121,7 @@ const logout=async()=>{
             </button>
           )}
         </div>
-      }
+     ) }
     </nav>
   );
 };
