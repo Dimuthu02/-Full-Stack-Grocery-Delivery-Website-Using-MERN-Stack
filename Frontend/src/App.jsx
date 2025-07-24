@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from './Components/NavBar'
 import { Route, Routes } from 'react-router-dom'
+import Home from './Pages/Home'
 
 const App = () => {
   return (
