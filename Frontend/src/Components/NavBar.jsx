@@ -57,11 +57,25 @@ const logout=async()=>{
             Login
           </button>
         ) : (
-          <div>
-            <img src={assets.profile_icon} className="w-10" alt="" />
-            <ul>
-              <li>My order</li>
-              <li>Logout</li>
+          <div className="relative group">
+            <img
+              src={assets.profile_icon}
+              className="w-10 h-10 rounded-full cursor-pointer"
+              alt="Profile"
+            />
+            <ul className="hidden group-hover:block absolute top-12 right-0 bg-white shadow-lg rounded-md w-44 text-sm z-50">
+              <li
+                onClick={() => navigate("/myorders")}
+                className="px-4 py-2 hover:bg-emerald-50 cursor-pointer transition-colors"
+              >
+                My Orders
+              </li>
+              <li
+                onClick={logout}
+                className="px-4 py-2 hover:bg-red-50 text-red-500 hover:text-red-700 cursor-pointer transition-colors"
+              >
+                Logout
+              </li>
             </ul>
           </div>
         )}
