@@ -102,7 +102,7 @@ const logout=async()=>{
           >
             Content
           </NavLink>
-          {!user ? (
+          {!user ? {(
             <button
               onClick={() => {
                 setOpen(false);
@@ -112,7 +112,7 @@ const logout=async()=>{
             >
               Login
             </button>
-          ) : (
+          )} : (
             <button
               onClick={logout}
               className="cursor-pointer px-6 py-2 mt-2 bg-emerald-600 hover:bg-emerald-700 transition text-white rounded-full text-sm"
